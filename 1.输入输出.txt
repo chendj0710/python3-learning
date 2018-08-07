@@ -1,0 +1,21 @@
+1.输出print()
+  1)打印字符串  
+     print("hello world")					hello world
+	 print("hello", "jane")					hello jane        遇到逗号输出一个空格
+     
+     print(r'hello "kangkang"')             hello "kangkang"   r''表示''中的不用转义
+	 
+  2)数字
+    print(200)								200
+	print("100+200 =", 100+200)				100+200 = 300
+    
+    
+   
+	
+
+
+2.输入input()
+  1)
+    name = input()
+	
+  2)name = input('please input your name:')
