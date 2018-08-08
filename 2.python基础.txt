@@ -1,6 +1,7 @@
 注意：
     python区分大小写
-    
+
+一、基础数据类型    
 1.数据类型
   整数
   浮点数
@@ -25,7 +26,83 @@
     10/3            3.33333333
     10//3           3               地板除，对结果取余
     
-    chendj0710/python3-learning.git
+
+二、内置其他数据类型
+1.list      可变的集合
+  表示方式：  classlist = ['zhangsan', 'lisi','wanger']              同类型数据
+              classlist = ['wangwu', 1]                              不同类型数据
+              classlist = ['zhangsan', ['wangwu', 1], 'lisi']        嵌套
+  动作： 
+              a.使用下标访问：
+                    classlist[1], classlist[2,1]
+                    
+                    classlist[-n]                        倒数第n个元素
+              b.插入
+                    classlist.append(values)             插入尾
+                    classlist.insert(i, values)          插入指定位置
+              c.删除
+                    classlist.pop()                      删除尾                
+                    classlist.pop(i)                     删除指定位置
+                    
+              d.获取元素个数
+                    classlist.len()
+              e.赋值
+                    classlist[1] = values
+
+2.tuple     不可变的list   
+    特点：    元素一旦确定，则不可改变
+    表示方式： classtuple = ('Michael', 'Bob', 'Tracy')
+    动作： 
+            a.下标访问
+            
+    特别地，如何只定义一个只有一个元素的tuple,则需使用逗号,如classtuple = (1,)，如果写成classtuple = (1)，则会认为是整数1
     
-    git remote add origin git@github.com:chendj0710/python3-learning.git
-    git clone git@github.com:chendj0710/python3-learning.git
+3.dic     相当于map    键值对key-values
+   表示方式：d = {'Michael': 95, 'Bob': 75, 'Tracy': 85}
+             d['Michael']
+             
+             其中key必须是不可变的，因为内部存储时是用key hash来计算value的存储位置的
+             经常会使用str, 数字作为key
+             
+    动作：
+            访问：dict[key]
+            添加：dict[key] = value       如果key和之前的重复，则覆盖之前的value
+            删除: dict.pop(key)
+            
+4.set     无序集合
+   表示方法：d = set{1,2,3} 或 {1,2,3}      
+   动作：
+        添加： d.add(key)
+        删除： d.remove(key)
+        
+        支持类似于数学集合一样的操作：
+            a-b  a&b  a|b
+
+   set只存储key,并不存储value,使用set初始化时，必须使用不可变参数初始化，不能使用list等可变参数，如：
+   d.set(1,[2,3])   ×   
+     
+    
+
+三、条件判断       注意冒号和elif
+    if age >= 18:
+        print('adult')
+    elif age >= 6:
+        print('teenager')
+    else:
+        print('kid')
+        
+四、循环
+   1.for x  in list/tupe
+       for x  in  [1,2,3,4,5]:
+         sum = sum + x
+       
+       for x  in  range(5):
+         sum = sum + x
+   注：其中range返回一个0-n的序列（不包含n)
+   
+   2.while
+     while 条件判断:
+        执行
+
+     支持break,continue
+    
