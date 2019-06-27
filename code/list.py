@@ -34,7 +34,7 @@ print(nums)
 
 #treavesing 切片list
 for num in nums[:3]:
-    print(num) 
+    print(num)
 
 #降序输出nums前三
 for num in sorted(nums, reverse=True)[:3]:

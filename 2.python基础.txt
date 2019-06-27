@@ -123,18 +123,20 @@ eg:
 	tuple1 = (1,2)
 	tuple1[0] = 10      不合法
 	tuple1 = (10, 20)    合法
-     
+  
+  
 3.dic     相当于map    键值对key-values
    表示方式：d = {'Michael': 95, 'Bob': 75, 'Tracy': 85}
              d['Michael']
              
-             其中key必须是不可变的，因为内部存储时是用key hash来计算value的存储位置的
+             其中key必须是不可变的，因为内部存储时是用key做hash来计算value的存储位置的
              经常会使用str, 数字作为key
              
     动作：
             访问：dict[key]
-            添加：dict[key] = value       如果key和之前的重复，则覆盖之前的value
+            添加/修改：dict[key] = value       如果key和之前的重复，则覆盖之前的value   
             删除: dict.pop(key)
+				  del dict[key]
             
 4.set     无序集合
    表示方法：d = set{1,2,3} 或 {1,2,3}      
