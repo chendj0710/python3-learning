@@ -1,0 +1,23 @@
+1.web开发
+  django ， tornado， flask
+  
+2.云计算 
+  OpenStack
+  
+3.网络爬虫
+  框架：scripy
+  
+4.大数据分析
+
+5.人工智能
+
+6.自动运维
+
+
+数据库：
+	mogodb, redis
+	
+	
+书籍推荐：
+	python编程：从入门到实践
+	流畅的python

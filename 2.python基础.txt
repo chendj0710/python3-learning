@@ -1,11 +1,15 @@
 注意：
     python区分大小写
 
+注释
+  python是通过#来注释
+	
 一、基础数据类型    
 1.数据类型
   整数
   浮点数
-  字符串， ‘hello  world’  ”hello world"
+  字符串， ‘hello  world’  ”hello world"     +号用来拼接字符串, 
+											字符串 + 数字        字符串  + str(num)
   布尔值   True  False
   空值     None，并非0
   
@@ -39,24 +43,87 @@
                     classlist[-n]                        倒数第n个元素
               b.插入
                     classlist.append(values)             插入尾
-                    classlist.insert(i, values)          插入指定位置
+                    classlist.insert(i, values)          插入指定位置， i后的所有元素均右移一位
               c.删除
-                    classlist.pop()                      删除尾                
-                    classlist.pop(i)                     删除指定位置
+                    classlist.pop()                      删除尾         返回删除的元素           
+                    classlist.pop(i)                     删除指定位置   返回删除的元素 
+					
+					del classlist[i]					 删除指定位置，无返回值
+					
+					classlist.remove(value)				 按值删除      只删除第一个匹配的元素， 无返回
                     
               d.获取元素个数
                     classlist.len()
               e.赋值
                     classlist[1] = values
+					
+			  f.遍历									注意for循环后面的冒号:
+					for item in list_items:
+						print(item)		
+					
+	排序：	
+			 a.sort  修改list本身的值
+					classlist.sort()				   增序
+					classlist.sort(reverse=True)       逆序排列
+					
+			 b.sorted 并不修改classlist本身的值
+					sorted(classlist)                  返回增序的list
+					sorted(classlist, reverse=True) 
+					
+			 c.reverse  修改classlist本身值，但是可逆
+			        claslist.reverse()
+					
+	创建数字列表 range
+			a.生成方法
+				--range
+					range(start, end)            返回[start, end)之间的所有数，默认步长是1
+					range(start, end, step)		 指定步长的数字集合
+					
+					list(range(...))			 将range返回的结果转换成列表
+				
+				--列表解析
+					listname = [list_item_exrp  for sub ]
+					
+					等价于
+					for sub
+						listname.append(list_item_exrp)
+				eg:
+					squares = [value**2 for value in range(1, 6) ]	 生成1-5之间数的平方集合
+					print(squares)
+					
+					
+			b.常见函数
+				min, max, sum
+				
+	使用列表的部分(切片)
+			格式：  list2 = list1[start:end]    则list2就是取列表1中从[start,end)的元素创建的新list(新申请了内存)
+			
+			其中：
+				start和end均可选，list[:end]   表示返回从[0,end)的切片
+								  list[start:] 表示返回从[start,len(list))的切片
+								  list[:]	   返回整个list的副本
+								  
+		    特别的，list2 = list1, 则list2只是原list1的一个引用，两者指向同一个内存。
+					但list2=list1[:], 则list2是list1的一个副本， 两者指向的内存不同
 
-2.tuple     不可变的list   
-    特点：    元素一旦确定，则不可改变
+			
+			
+2.tuple     不可变的list， 用于存储整个生命周期不变的一组值   
+    特点：    元素一旦确定，则不可改变;但元组变量可以指向新的元组
     表示方式： classtuple = ('Michael', 'Bob', 'Tracy')
     动作： 
             a.下标访问
+	遍历：	
+			for item int tuple
+				print item
             
     特别地，如何只定义一个只有一个元素的tuple,则需使用逗号,如classtuple = (1,)，如果写成classtuple = (1)，则会认为是整数1
-    
+	
+eg:
+	tuple1 = (1,2)
+	tuple1[0] = 10      不合法
+	tuple1 = (10, 20)    合法
+     
 3.dic     相当于map    键值对key-values
    表示方式：d = {'Michael': 95, 'Bob': 75, 'Tracy': 85}
              d['Michael']
@@ -90,6 +157,30 @@
         print('teenager')
     else:
         print('kid')
+		
+
+1.条件测试  运算符
+	字符串运算符    
+		==	字符串判等
+	    !=  字符串判不等
+			  
+	关系运算符
+		和c语言一样
+		
+	逻辑运算符
+		and,  or, not(非)
+		
+	列表的包含和不包含
+	    in, not in
+
+2.if 和列表
+
+   if lists :   #如果lists为空，则返回False
+	   sub
+	
+	
+
+	
         
 四、循环
    1.for x  in list/tupe
