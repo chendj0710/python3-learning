@@ -14,7 +14,7 @@
 	
 
 
-2.输入input()
+2.输入input()    返回的是字符串，可用int()转换成数字
   1)
     name = input()
 	

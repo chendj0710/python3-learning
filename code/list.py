@@ -39,3 +39,39 @@ for num in nums[:3]:
 #降序输出nums前三
 for num in sorted(nums, reverse=True)[:3]:
     print(num)
+
+
+#将列表1中所有元素追加到列表2中
+#定义一个待验证用户表和已验证用户列表
+unconfirmed_users = ['zhangsan', 'lisi', 'wanger', 'mazi']
+confirmed_users = []
+
+while unconfirmed_users:
+    user = unconfirmed_users.pop()
+    print("Verifying user: " + user.title())
+    confirmed_users.append(user)
+
+#print all confirmed user
+for user in confirmed_users:
+    print(user.title())
+
+
+#删除某个值， 从列表中
+animals = ['dog', 'cat', 'monkey', 'cat', 'pig', 'cat']
+tmpAnimal = 'cat'
+
+while tmpAnimal in animals:
+    animals.remove(tmpAnimal)
+
+print(animals)
+
+
+#法二
+i = 0
+while i < len(animals):
+    if(animals[i] == tmpAnimal):
+        animals.remove(tmpAnimal)
+    i += 1
+
+    
+print(animals)

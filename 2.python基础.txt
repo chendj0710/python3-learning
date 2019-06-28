@@ -32,7 +32,7 @@
     
 
 二、内置其他数据类型
-1.list      可变的集合
+1.list      可变的集合	
   表示方式：  classlist = ['zhangsan', 'lisi','wanger']              同类型数据
               classlist = ['wangwu', 1]                              不同类型数据
               classlist = ['zhangsan', ['wangwu', 1], 'lisi']        嵌套
@@ -76,6 +76,7 @@
 	创建数字列表 range
 			a.生成方法
 				--range
+				    range(num)                   返回num个数，[0, num)
 					range(start, end)            返回[start, end)之间的所有数，默认步长是1
 					range(start, end, step)		 指定步长的数字集合
 					
@@ -137,6 +138,18 @@ eg:
             添加/修改：dict[key] = value       如果key和之前的重复，则覆盖之前的value   
             删除: dict.pop(key)
 				  del dict[key]
+	
+	遍历:
+			遍历键值对：for key, value in dict.items():
+			遍历所有键: for key in dict.keys():      	#keys()返回的是一个列表     
+			            for key in dict:        		#简写， dict默认遍历所有节点，一般不建议
+						
+			遍历所有值: for vaule in dict.values()    
+			            for vaule in set(dict.values()):  #去重
+						
+			特别地，遍历字典时，返回的顺序是无法预测的，如果需按顺序返回，可使用sorted()
+						
+			
             
 4.set     无序集合
    表示方法：d = set{1,2,3} 或 {1,2,3}      
@@ -192,6 +205,10 @@ eg:
        for x  in  range(5):
          sum = sum + x
    注：其中range返回一个0-n的序列（不包含n)
+   
+   for循环不应该修改列表。
+   因为如果在for循环中删除元素时，则相应的后面的元素均前移，导致少判断了一个元素。插入同理
+    
    
    2.while
      while 条件判断:
