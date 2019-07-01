@@ -73,5 +73,5 @@ while i < len(animals):
         animals.remove(tmpAnimal)
     i += 1
 
-    
+
 print(animals)

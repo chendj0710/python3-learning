@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-\
 
+#from func2 import make_pizza
+from func2  import make_pizza as mp
 
 #def a add fun
 def my_increase(num):
@@ -19,3 +21,8 @@ def print_table(**tableInfo):
 
 print_table(groupno='1', groupName='link1')
 print_table(groupno=1, groupName='link1')
+
+
+#引用导入的函数
+#make_pizza(5, 'hanbao', 'nailao')
+mp(5, 'hanbao', 'nailao')

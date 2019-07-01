@@ -28,3 +28,43 @@
 	b.任意数量的关键字实参
 	  func_name(**param1)         param1内部实现是dict
 	  
+3.函数在模块中存储
+  1)制作模块
+    python中一个文件就相当于一个模块
+	
+  2)导入的方法
+    python中如需要其他文件中的函数，则需要使用import将其他模块导入，导入的方法
+	主要有以下几种:
+	
+	a.导入整个模块
+	  import  module_name
+	  
+	  modulename.func_name(param)      模块中函数的调用
+	  
+	b.导入部分函数
+	  from moudule_name  import func1, func2, ..., funcn
+	  
+	  func_name(param)				  直接使用函数名调用
+	  
+	c.导入模块中的所有函数
+	  from module_name import * 	  不建议使用，因为这样可能会造成大量的命名冲突
+	  
+注:
+	1.在导入模块或者函数时，可以使用as给模块和函数起别名，
+	  可用来解决命名冲突或者名称太长的问题
+	  
+	  起别名号，原名称就不可以用了(not defined)，不同于sql
+	  
+	2.后面考虑多文件，多目录的import的方法
+	
+	
+4.函数编写规则
+  1)函数名和参数名建议采用小写字母加下划线
+  
+  2)参数较多时，可以将参数放在下一行，每次其实用TAB
+  def function_name(
+		parameter_0, parameter_1, parameter_2,
+		parameter_3, parameter_4, parameter_5):
+	function body...
+	  
+  3)两个函数间建议两行空行隔开
