@@ -75,7 +75,7 @@
 					
 	创建数字列表 range
 			a.生成方法
-				--range
+				--range							 返回的并非一个列表，需要使用list才行
 				    range(num)                   返回num个数，[0, num)
 					range(start, end)            返回[start, end)之间的所有数，默认步长是1
 					range(start, end, step)		 指定步长的数字集合
@@ -198,13 +198,19 @@ eg:
 	
         
 四、循环
-   1.for x  in list/tupe
+   1.for x  in list/tupe/range
        for x  in  [1,2,3,4,5]:
          sum = sum + x
        
        for x  in  range(5):
          sum = sum + x
    注：其中range返回一个0-n的序列（不包含n)
+   
+   
+   for i in range(10):
+	  ...
+	
+	通过range即可控制文件的次数
    
    for循环不应该修改列表。
    因为如果在for循环中删除元素时，则相应的后面的元素均前移，导致少判断了一个元素。插入同理

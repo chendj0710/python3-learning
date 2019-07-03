@@ -28,3 +28,32 @@
   
 
 四、导入类
+   1.导入单个类
+     from module_name  import class_name
+	 
+	访问类是，直接使用类名即可
+	 
+   2.导入过个类
+     from module_name  import class_name1, class_name2
+	 
+	 访问类是，直接使用类名即可
+	 
+   3.导入整个模块
+     import module_name
+	 
+	 访问：module_name.class_name
+	 
+	 好处：1)导入多个类，但是不会产生命名冲突
+	       2)可以知道有哪些地方使用了导入类
+	 
+   4.导入模块中的所有类      不推荐使用
+     rom module_name  import *
+	 
+	 不推荐的原因：
+		1)不明确到底导入了哪些
+		2)导入所有容易和本文件命名冲突
+		
+注：
+	python中并没有所谓的头文件的概念。现在有A，B, C三个模块，
+	则如果B依赖A， C依赖A, B.即使在B中已经import A, 在C中仍然要显示import A， import B
+	 

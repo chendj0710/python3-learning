@@ -1,0 +1,12 @@
+1.help()
+  进入帮助模式
+  然后直接输入指定的模块名即可
+
+2.
+  import module_name
+  help(module_name)
+  
+  help(module_name.func_name)
+  
+3.dir(module_name)
+  查看当前模块下的所有函数
