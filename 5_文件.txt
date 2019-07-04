@@ -1,0 +1,18 @@
+文件读写
+1.open
+  open(filename [, mode])
+      mode: r   
+	        w     如果不存在，则创建，存在，则截断
+			a     追加写
+			r+    可读可写
+			
+  缺省情况下，open是以只读r的方式打开
+			
+2.f.read    返回这个文件
+
+
+3.f.write   写文件，不带\n
+
+注：python中只能将字符串写入文件，如希望写数字，则需要使用str()
+
+4.f.close()

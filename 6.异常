@@ -1,0 +1,21 @@
+异常
+一、处理异常的方式
+   try:
+      sub1		#肯能出现异常的语句
+   except abnormal_name:
+      abnormal_sub  #异常处理语句
+	  
+	else
+	   sub2    #sub1增长执行，则执行sub2，这个else块可省略
+	   
+
+执行流程：
+	首先，执行sub1，如果有异常，且异常名是abnormal_name，则执行abnormal_sub
+	      否则，执行sub2
+		  
+    执行完整个try-except-else模块后，会继续执行下面的程序
+	
+
+1.错误类型名
+  ZeroDivisionError       除数为0
+  FileNotFoundError       文件不存在  

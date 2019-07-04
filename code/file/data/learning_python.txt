@@ -1,0 +1,5 @@
+In Python you can user list
+In Python you can user tuple
+In Python you can user dict
+In Python you can user tuple  Python3
+In Python you can user dict  python
