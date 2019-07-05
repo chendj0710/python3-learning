@@ -19,3 +19,4 @@
 1.错误类型名
   ZeroDivisionError       除数为0
   FileNotFoundError       文件不存在  
+  TypeError               类型错误
