@@ -221,4 +221,29 @@ eg:
         执行
 
      支持break,continue
+	 
+	 
+五、变量作用域
+1.分类
+  python中，分为四个作用域
+	L （Local） 局部作用域
+	E （Enclosing） 闭包函数外的函数中
+	G （Global） 全局作用域
+	B （Built-in） 内建作用域
+	
+	以 L –> E –> G –>B 的规则查找，即：在局部找不到，便会去局部外的局部找（例如闭包），再找不到就会去全局找，再者去内建中找。
+	
+   python中，在def、class和lambda中会改变变量的作用域
+   但如if/elif/else/ try/except for/while中定义的，并非局部变量，在其外仍能访问
+   
+   改变作用域，就是说，在def、class和lambda中进行复制，则局部作用域就会覆盖全局作用域
+   
+ 2.全局变量和局部变量
+   
+   
+   
+   
+   
+
+
     

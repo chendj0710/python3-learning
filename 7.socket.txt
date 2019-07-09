@@ -1,0 +1,36 @@
+一、TCP
+1.server
+ 1)流程
+  ss = socket()
+  bind()
+  listen()
+  info_loop:
+    cs = accept()
+    comm_loop:
+	  cs.recv()/cs.send()
+	cs.close()
+
+  ss.close()
+  
+2.client
+  cs = socket()
+  cs.connect()
+  comm_loopL:
+     cs.recv()/cs.send()
+  cs.close()
+  
+注：在python3中send和recv均发送的字节流，并非字符串
+
+二、udp
+1.server            不再用一个单独的文件描述符，用来监听连接了
+  ss = socket()
+  ss.bind()
+  info_loop:
+    data, addr = ss.recvfrom(BUFSIZE)/ ss.sendto(data,addr)   #因其是无连接的，故发送时，需要制定dip和dport
+  ss.close
+  
+2.client
+  cs = socket()
+  info_loop:
+    cs.sendto(data,addr)/data, addr = cs.recvfrom(BUFSIZE)
+  cs.close()
