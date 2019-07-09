@@ -10,6 +10,9 @@ BUFSIZE = 1024
 ADDR = (HOST, PORT)
 
 udp_csock = socket(AF_INET, SOCK_DGRAM)
+#test socket.getservbyname(), socket包中的公共函数，非类中函数
+daytime_port = getservbyname('daytime', 'udp')
+print("daytime_port:" + str(daytime_port))
 while True:
     buf = input(">")
     #udp是无连接的，一个UDP客户端，可以创建一个套接口并发送数据包给一个服务器

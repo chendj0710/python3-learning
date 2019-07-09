@@ -18,6 +18,7 @@ while True:
     client_fd, client_addr = server_fd.accept()
     print("...connected from :", client_addr)
     while True:
+        #服务器端，收到消息，然后time+msg发回去
         data = client_fd.recv(BUFSIZE)
         if not data:  #client 断掉之后，则退出
             break;

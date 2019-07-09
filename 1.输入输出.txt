@@ -19,3 +19,9 @@
     name = input()
 	
   2)name = input('please input your name:')
+  
+
+3.转换 
+ 1)ascii <=> 字符
+  chr(num)   => char
+  ord(char)  => num
