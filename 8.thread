@@ -1,0 +1,35 @@
+多线程
+一、支持多线程的模块
+thread           同步原语较少，且和threading不兼容
+
+threading        更高级别的，功能更全面的线程管理
+                   支持守护线程
+
+Queue            用户可以创建一个队里数据结构，用于多线程间数据共享
+
+二、threading模块
+1.概要
+  1)threading模块下，缺省情况下， 一个线程结束了，并不会导致整个程序退出
+  它会等到所有线程结束后，进程才会退出
+  
+  2)创建线程后，并不会立即执行，只有手动调用start才会执行
+  
+  
+  创建函数(Thread对象方面)
+	_init_(group=None, target=None, name=None, args=(), kwargs ={}, verbose=None, daemon=None)
+	
+	target:执行函数， 在 run()方法中调用
+	args:执行函数的参数
+	
+	tid = threading.Thread(target=loop, args=(i, loops[i]))
+	
+
+2.守护进程
+  
+
+3.Thread.jion：
+ 其他线程可以调用一个线程的 join() 方法。这会阻塞调用该方法的线程，直到被调用 join() 方法的线程终结
+
+
+
+   

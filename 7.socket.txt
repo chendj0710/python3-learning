@@ -26,7 +26,7 @@
   ss = socket()
   ss.bind()
   info_loop:
-    data, addr = ss.recvfrom(BUFSIZE)/ ss.sendto(data,addr)   #因其是无连接的，故发送时，需要制定dip和dport
+    data, addr = ss.recvfrom(BUFSIZE)/ ss.sendto(data,addr)   #因其是无连接的，故发送时，需要指定dip和dport
   ss.close
   
 2.client
@@ -34,3 +34,5 @@
   info_loop:
     cs.sendto(data,addr)/data, addr = cs.recvfrom(BUFSIZE)
   cs.close()
+  
+三、sockeserver模块
