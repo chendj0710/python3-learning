@@ -8,6 +8,7 @@
     python中，首字母大写的名称指的是类
 
   2)__init__()  函数
+    类似于构造函数，创建类的时候自动调用
 
   3)属性
     python是动态语言，可以在运行过程中增加属性和方法。在__init__()中只是定义了部分初始属性
@@ -18,6 +19,7 @@
   clase Subclass_name(Superclass_name):
     def __init__(self, ...)
         super().__init__(...)      #显示调用父类的构造，此处不用传self
+								   #也可以显示调用父类的构造，Superclass_name.__init__(self)
 		...
 		
 

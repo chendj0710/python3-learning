@@ -3,9 +3,9 @@
 thread           同步原语较少，且和threading不兼容
 
 threading        更高级别的，功能更全面的线程管理
-                   支持守护线程
+                 支持守护线程
 
-Queue            用户可以创建一个队里数据结构，用于多线程间数据共享
+Queue            用户可以创建一个队列数据结构，用于多线程间数据共享
 
 二、threading模块
 1.概要
@@ -20,6 +20,7 @@ Queue            用户可以创建一个队里数据结构，用于多线程间
 	
 	target:执行函数， 在 run()方法中调用
 	args:执行函数的参数
+	name:缺省情况下，系统会自动分配以“Thread-N”格式的名称，N为十进制数
 	
 	tid = threading.Thread(target=loop, args=(i, loops[i]))
 	
@@ -29,6 +30,43 @@ Queue            用户可以创建一个队里数据结构，用于多线程间
 
 3.Thread.jion：
  其他线程可以调用一个线程的 join() 方法。这会阻塞调用该方法的线程，直到被调用 join() 方法的线程终结
+ 
+ 
+三、线程同步原语
+1.锁(Lock)
+  lock = Lock()        #创建锁
+  lock.acquire()       #获取锁
+  lock.release()	   #释放或
+  
+2.信号量 semaphore和BoundedSemaphore
+
+  有两种信号量，semaphore和BoundedSemaphore，他们之间唯一的区别就是
+  BoundedSemaphore信号量，如果计数器的值超过初始值，就会抛出ValueError
+
+  BoundedSemaphore(MAX)											 #初始化计数
+  BoundedSemaphore.acquire(self, blocking=True, timeout=None)    #减少计数
+  BoundedSemaphore.release()                          			 #增加计数
+
+
+3.条件变量
+
+
+
+
+附：
+1.在with语句中，可以使用锁，信号量和条件变量
+作用：当进入with语句时，调用acquire，当离开时，调用realease
+	
+eg:
+with some_lock:
+    # do something...
+	
+相当于：
+some_lock.acquire()
+try:
+    # do something...
+finally:
+    some_lock.release()
 
 
 
