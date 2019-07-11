@@ -46,6 +46,9 @@ Queue            用户可以创建一个队列数据结构，用于多线程间
   BoundedSemaphore(MAX)											 #初始化计数
   BoundedSemaphore.acquire(self, blocking=True, timeout=None)    #减少计数
   BoundedSemaphore.release()                          			 #增加计数
+  
+  
+  应用场景：生产者和消费者
 
 
 3.条件变量
@@ -67,6 +70,26 @@ try:
     # do something...
 finally:
     some_lock.release()
+	
+	
+三、queue模块   
+	创建了一个队列，可以让线程间相互通信。让生产者放入产品，消费者消费这些产品
+
+1.种类
+  Queue(maxsize=0)      	先进先出队列， 如果给定最大值，则在没有空间时阻塞。缺省为无限空间
+  LinfoQueue(maxsize=0)	    后入先出
+  PriorityQueue(maxsize=0)  优先级队列 
+  
+2.Queue的使用
+  put(item, block=Ture, timeout=None)     入队
+  get(block=True, timeout=None)			  出队
+  
+  qsize()   获取队列大小
+  empty()   判空
+  full()    判满
+  
+  
+  
 
 
 

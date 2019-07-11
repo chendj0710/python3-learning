@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
+import threading
+from  time import ctime
+
 class MyThread(threading.Thread):
     def __init__(self, func, args, name=''):
         #需要显示调用threading.Thread的__init__()函数
