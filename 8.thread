@@ -51,8 +51,31 @@ Queue            用户可以创建一个队列数据结构，用于多线程间
   应用场景：生产者和消费者
 
 
-3.条件变量
+3.条件变量  Condition
+  条件变量总是与某种类型的锁相管理，锁可以传入。缺省情况下，Condition对象会自动创建一个RLock
+  
+  1)流程：
+	# Consume one item
+	with cv:
+		while not an_item_is_available():     
+			cv.wait()
+		get_an_available_item()
 
+	# Produce one item
+	with cv:
+		make_an_item_available()
+		cv.notify()
+		
+   2)函数解释
+     wait:
+     当调用wait后，会自动释放底层锁，并阻塞线程。知道其他线程使用notify或notifyAll唤醒
+	 唤醒后，其自动回重新获取底层锁
+	 
+	 notify:默认唤醒等待这个条件变量的n个线程。缺省情况下n=1
+	 	
+
+  适合场景：
+	生产者，消费者的模型。 condition很适合那种主动休眠，被动唤醒的场景
 
 
 

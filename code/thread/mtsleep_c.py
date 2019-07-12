@@ -31,14 +31,14 @@ def main1():
 
     print("All done at:" + ctime())
 
-'''********************方法2：创建一个实例，并传给它一个可调用的类*****************************'''
+'''********************方法2：创建一个实例，并传给它一个可调用实例*****************************'''
 class ThreadFunc(object):
     def __init__(self, func, args, name=''):
         self.name = name
         self.func = func
         self.args = args
 
-    def __call__(self):
+    def __call__(self):   #覆写__call__函数，则表示其实例可调用
         #因args是一个元组，如上面的(i, loops[i])，而我们定义的loop是一个固定参数的
         #此处将其解包，拆分成nloop和nsec两个参数，故使用*self.args
         self.func(*self.args)

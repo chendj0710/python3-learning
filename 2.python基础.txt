@@ -18,6 +18,11 @@
     lists = []
 	if lists is None:
 		print("lists is null")				=>将会执行这条语句
+		
+
+    进制：0b1001       二进制
+	      0o56         八进制
+          0xff         十六	
     
   
   
@@ -25,6 +30,16 @@
   变量可以反复赋值，而且可以数据类型不同。如：
   a = 100
   a = 'ABC'
+  
+  技巧：
+	1)同时声明多个变量并复制
+	  a,b,c=3,4,5     #a=3,b=4, c=5
+	  
+	  a = b = c = 3
+	  
+	2)交换两个变量
+	  (a,b) = (b, a)
+	   a, b = b, a
   
   
 3.常量
@@ -148,6 +163,7 @@
 2.tuple     不可变的list， 用于存储整个生命周期不变的一组值   
     特点：    元素一旦确定，则不可改变;但元组变量可以指向新的元组
     表示方式： classtuple = ('Michael', 'Bob', 'Tracy')
+	           classtuple = 'Michael', 'Bob', 'Tracy'     
     动作： 
             a.下标访问
 	遍历：	
@@ -155,11 +171,17 @@
 				print item
             
     特别地，如何只定义一个只有一个元素的tuple,则需使用逗号,如classtuple = (1,)，如果写成classtuple = (1)，则会认为是整数1
-	
+
+注：
+  1)tuple不可以修改元组元素，但是可以修改元组这个变量，即重新定义这个元组	
 eg:
 	tuple1 = (1,2)
 	tuple1[0] = 10      不合法
 	tuple1 = (10, 20)    合法
+	
+  2)tuple的解封装
+    tuple1 = 3, 4, 5
+	x, y, z = tuple1       => x=3, y=4, z=5
   
   
 3.dic     相当于map    键值对key-values
@@ -314,7 +336,10 @@ eg:
 		
 	输出NONE
 	 
- 
+
+七、运算符
+  三元运算： [on true] if [expression] else [on false]     
+							先执行expression，如果表达式为true就执行[on true]中语句， 否则执行[on false]中语句
    
    
    
